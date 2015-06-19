@@ -1,8 +1,0 @@
-CS 378 - Project File Dependencies
-
-http://www.spoj.com/problems/PFDEP/
-
-Will Need:
-	Adjacency Matrix of successors: 0 = false
-					1 = true
-  
