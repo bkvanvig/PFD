@@ -5,5 +5,4 @@ http://www.spoj.com/problems/PFDEP/
 Will Need:
 	Adjacency Matrix of successors: 0 = false
 					1 = true
-  	Priority_Queue (minimum): for candidates
-	
+  
