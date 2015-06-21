@@ -27,7 +27,7 @@ void PFD_read_first (const string& s, int num) {
 
 int PFD_eval (int i, int j) {
     // <your code>
-
+    return 1;
     }
 
 

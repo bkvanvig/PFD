@@ -21,7 +21,7 @@
 
 int main () {
     using namespace std;
-    pfd_solve(cin, cout);
+    PFD_solve(cin, cout);
     return 0;}
 
 /*
