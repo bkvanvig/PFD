@@ -24,7 +24,7 @@ void PFD_read (const string& s) {
     int task;
     //Number of dependencies
     int num;
-    s >> task >> num;
+    sin >> task >> num;
     while (num >0){
         sin >> i;
         cout << i << " ";
@@ -65,7 +65,7 @@ void PFD_solve (istream& r, ostream& w) {
     sin >> tasks >> rules;
     w << tasks << " " << rules << endl;
     while (getline(r,s)){
-        PFD_read(r);
+        PFD_read(s);
     }
     return;
     
