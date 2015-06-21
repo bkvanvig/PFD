@@ -45,9 +45,14 @@ void PFD_print (ostream& w, int i) {
 void PFD_solve (istream& r, ostream& w) {
     string s;
     int i;
+    int tasks = 0;
+    int rules = 0;
     int num = 5;
     getline(r,s);
     istringstream sin(s);
+    sin >> tasks >> rules;
+    w << tasks << " " << rules << endl;
+    getline(r,s);
     while (num >0){
         sin >> i;
         PFD_print(w, i);
