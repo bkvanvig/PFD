@@ -23,7 +23,7 @@ using namespace std;
  * @return i representing the number of tasks (<=100)
  * @return j representing the number of rules (<=100)
  */
-void PFD_read_first (const string& s, int i);
+void PFD_read_first (const string& s);
 
 // ------------
 // PFD_eval
