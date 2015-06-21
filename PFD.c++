@@ -18,14 +18,7 @@ using namespace std;
 // ------------
 
 void PFD_read_first (const string& s, int num) {
-    istringstream sin(s);
-    int i;
-    while (num >0){
-        sin >> i;
-        PFD_print(i);
-        --num;
-    }
-    cout << endl;
+    
     return;}
 
 // ------------
@@ -51,7 +44,15 @@ void PFD_print (ostream& w, int i) {
 
 void PFD_solve (istream& r, ostream& w) {
     string s;
-    if (getline(r,s)) {
-        PFD_read_first(s, 5);
+    istringstream sin(s);
+    int i;
+    getline(r,s);
+    int num = 5;
+    while (num >0){
+        sin >> i;
+        PFD_print(w, i);
+        --num;
     }
+    cout << endl;
+    
 }
