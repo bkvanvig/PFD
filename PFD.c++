@@ -17,8 +17,20 @@ using namespace std;
 // PFD_read
 // ------------
 
-void PFD_read_first (const string& s, int num) {
-    
+void PFD_read (const string& s) {
+    istringstream sin(s);
+    int i;
+    //Task Number
+    int task;
+    //Number of dependencies
+    int num;
+    s >> task >> num;
+    while (num >0){
+        sin >> i;
+        cout << i << " ";
+        --num;
+    }
+    cout << endl;
     return;}
 
 // ------------
@@ -52,12 +64,9 @@ void PFD_solve (istream& r, ostream& w) {
     istringstream sin(s);
     sin >> tasks >> rules;
     w << tasks << " " << rules << endl;
-    getline(r,s);
-    while (num >0){
-        sin >> i;
-        PFD_print(w, i);
-        --num;
+    while (getline(r,s)){
+        PFD_read(r);
     }
-    cout << endl;
+    return;
     
 }
