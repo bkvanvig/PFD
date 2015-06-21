@@ -44,10 +44,10 @@ void PFD_print (ostream& w, int i) {
 
 void PFD_solve (istream& r, ostream& w) {
     string s;
-    istringstream sin(s);
     int i;
-    getline(r,s);
     int num = 5;
+    getline(r,s);
+    istringstream sin(s);
     while (num >0){
         sin >> i;
         PFD_print(w, i);
