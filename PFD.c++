@@ -17,12 +17,16 @@ using namespace std;
 // PFD_read
 // ------------
 
-pair<int, int> PFD_read_first (const string& s) {
+void PFD_read_first (const string& s, int num) {
     istringstream sin(s);
     int i;
-    int j;
-    sin >> i >> j;
-    return make_pair(i, j);}
+    while (num >0){
+        sin >> i;
+        PFD_print(i);
+        --num;
+    }
+    cout << endl;
+    return;}
 
 // ------------
 // PFD_eval
@@ -30,6 +34,7 @@ pair<int, int> PFD_read_first (const string& s) {
 
 int PFD_eval (int i, int j) {
     // <your code>
+
     }
 
 
@@ -37,8 +42,8 @@ int PFD_eval (int i, int j) {
 // PFD_print
 // -------------
 
-void PFD_print (ostream& w, int i, int j, int v) {
-    w << i << " " << j << " " << v << endl;}
+void PFD_print (ostream& w, int i) {
+    w << i << " ";}
 
 // -------------
 // PFD_solve
@@ -47,11 +52,6 @@ void PFD_print (ostream& w, int i, int j, int v) {
 void PFD_solve (istream& r, ostream& w) {
     string s;
     if (getline(r,s)) {
-        const pair<int, int> p = PFD_read_first(s);
-        const int            i = p.first;
-        const int            j = p.second;
-        const int            v = PFD_eval(i, j);
+        PFD_read_first(s, 5);
     }
-    while (getline(r, s)) {
-        
-        PFD_print(w, i, j, v);}}
+}

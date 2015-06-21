@@ -23,7 +23,7 @@ using namespace std;
  * @return i representing the number of tasks (<=100)
  * @return j representing the number of rules (<=100)
  */
-pair<int, int> PFD_read (const string& s);
+void PFD_read_first (const string& s, int i);
 
 // ------------
 // PFD_eval
@@ -44,10 +44,8 @@ int  PFD_eval (int i, int j);
  * print three ints
  * @param w an ostream
  * @param i the beginning of the range, inclusive
- * @param j the end       of the range, inclusive
- * @param v the max cycle length
  */
-void PFD_print (ostream& w, int i, int j, int v);
+void PFD_print (ostream& w, int i);
 
 // -------------
 // PFD_solve
