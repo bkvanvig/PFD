@@ -15,10 +15,11 @@
 #include "PFD.h"
 
 using namespace std;
-
+//This array is 0 indexed while the input is 1-indexed. to access (2, 1) call adj[1][0]
 int adj[100][100]= {0};
 //vector<vector<int> > adj(100, vector <int> (0));
 priority_queue<int, vector<int>, greater<int> > pq;
+priority_queue<int, vector<int>, greater<int> > succ;
 
 // ------------
 // PFD_read_first
@@ -58,7 +59,92 @@ void populate_adj (ostream& w, const string& s, int t) {
 
 void PFD_eval (ostream& w, int t) {
     // <your code>
+    int param = t;
+    
+    //Change parameter
+    while (param > 0){
+        if (succ.empty()){
+            full_scan(t);
+        }
+        else
+            scan_succ(t);
+        
+        assert(succ.empty());
+        param -= pop_pq(w, t);
+        //succ will be empty only on the last run. so if empty break?
+        //assert(!succ.empty);
+        if (succ.empty()){
+            w << endl;
+            return;
+        }
+        assert(pq.empty);
 
+    }
+}
+
+// ---------
+// pop_pq
+// ---------
+int pop_pq (ostream& w, int t){
+    int popped = 0;
+    while (!pq.empty()){
+        w << pq.top() << " ";
+        update_succ(t, pq.top());
+        pq.pop();
+        ++popped;
+    }
+    return popped;
+}
+// -------
+// update_succ
+// -------
+void update_succ (int t, int r){
+    for (int i = 0; i < t; ++i)
+    {
+        if (adj[i][r-1]==1){
+            succ.push_back(i+1);
+            adj[i][r-1] = 0;
+        }
+    }
+}
+
+// // --------
+// // row_scan
+// // --------
+// int row_scan (int r, int t){
+//     for (int i = 0; i < t; ++i)
+//     {
+//         if (adj[r-1][i]==1)
+//             return 1;
+//     }
+//     return 0;
+// }
+// // --------
+// // col_scan
+// // --------
+// int col_scan (int c, int t){
+//     for (int i = 0; i < t; ++i)
+//     {
+//         if (adj[i][c-1]==1)
+//             return 1;
+//     }
+//     return 0;
+// }
+// ----------
+// full_scan
+// ----------
+void full_scan (int t){
+    for (int i = 0; i < t; ++i)
+    {
+        for (int j = 0; j < t; ++j)
+        {
+            if (adj[i][j]==1){
+                ++i;
+                j = 0;
+            }
+        }
+        pq.push_back(i+1);
+    }
     return;
 }
 
@@ -74,8 +160,9 @@ void print_pq(ostream& w) {
     }
     w << endl;
 }
+
 // -------------
-// print_pq
+// print_adj
 // -------------
 void print_adj (ostream& w, int t) {
     for (int i = 0; i < t; ++i){
@@ -114,6 +201,6 @@ void PFD_solve (istream& r, ostream& w) {
         populate_adj(w, s, tasks);
     }
     PFD_eval(w, tasks);
-    w << 1;
+    //w << 1;
     //print_adj(w, tasks);
 }
