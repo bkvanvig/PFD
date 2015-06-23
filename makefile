@@ -80,6 +80,7 @@ TestPFD: PFD.h PFD.c++ TestPFD.c++
 	$(CXX) $(COVFLAGS) $(CXXFLAGS) PFD.c++ TestPFD.c++ -o TestPFD $(LDFLAGS)
 
 TestPFD.out: TestPFD
+	./TestPFD
 	$(VALGRIND) ./TestPFD  >  TestPFD.out 2>&1
 	$(GCOV) -b PFD.c++     >> TestPFD.out
 	$(GCOV) -b TestPFD.c++ >> TestPFD.out
