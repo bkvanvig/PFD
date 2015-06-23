@@ -35,7 +35,7 @@ void PFD_read_first (const string& s);
  * @return an 
  */
 int  PFD_eval (int i, int j);
-
+void print_pq(void);
 // -------------
 // PFD_print
 // -------------
