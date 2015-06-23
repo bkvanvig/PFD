@@ -30,7 +30,16 @@ using namespace std;
  */
 pair<int, int> PFD_read_first (const string& s);
 
+// ------------
+// populate_adj
+// ------------
 
+/* 
+ * read line and add 1's in adj where dependencies exist
+ * @param ostream& w, for outputting test matrix
+ * @param const string& s, dependency input line
+ * @param int t, total number of tasks for this case, 1 <= t <= 100
+ */
 void populate_adj (ostream& w, const string& s, int t);
 // ------------
 // PFD_eval
@@ -39,9 +48,56 @@ void populate_adj (ostream& w, const string& s, int t);
 /**
  * @param w the output stream
  * @param t the number of tasks
- * @return an 
+ * 
  */
 void PFD_eval (ostream& w, int t);
+
+// ---------
+// pop_pq
+// ---------
+
+/* 
+ * pop all elements in the priority queue
+ * @param ostream& w, for testing output
+ * @param int t, total tasks in test
+ * @return number of remaining tasks to be evaluated
+ */
+int pop_pq (ostream& w, int t);
+
+// -------
+// update_succ
+// -------
+/*
+ * add successors of to-be-popped elements before they are written to output
+ * successors are found in the corresponding columns of adj matrix
+ * @param int t, total tasks in test
+ * @param int r, row # to be popped
+ */
+void update_succ (int t, int r);
+
+// ---------
+// full_scan
+// ---------
+/*
+ * scan all rows of adj for blank rows
+ * if blank row exists, add to pq and continue scanning
+ * @param int t, total number of tasks in case
+*/
+void full_scan (int t);
+
+// --------
+// row_scan
+// --------
+/*
+ * scan row  for dependencies
+ * since adj is 0-indexed, search row i-1
+ * @param r row number to be searched
+ * @param t total number of rows in test case
+ * @return 0 if no dependcies
+ * @return 1 if >=1 dependencies
+ */
+
+//int row_scan (int r, int t);
 
 // ------------
 // PFD_eval
@@ -52,7 +108,15 @@ void PFD_eval (ostream& w, int t);
  */
 void print_pq(ostream& w);
 
+// -----------
+// print_adj
+// -----------
 
+/*
+ * prints adjacency matrix for validating test cases
+ * @param ostream& w, for writing output matrix
+ * @param int t, total number of tasks, for speedier traversal 
+ */
 void print_adj (ostream& w, int t);
 
 
