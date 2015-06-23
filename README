@@ -3,7 +3,13 @@ CS 378 - Project File Dependencies
 http://www.spoj.com/problems/PFDEP/
 
 Will Need:
-	Adjacency Matrix of successors: 0 = false
+	Adjacency Matrix:               0 = false
 					1 = true
   	Priority_Queue (minimum): for candidates
 	
+Time Estimate: 12 hrs
+Time Log:
+	6/19/15: 2 hrs
+	6/20/15: 1 hr
+	6/21/15: 1 hr
+	6/22/15: 3 hrs
