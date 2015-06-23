@@ -1,0 +1,75 @@
+==9923== Memcheck, a memory error detector
+==9923== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
+==9923== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
+==9923== Command: ./TestPFD
+==9923== 
+Running main() from gtest_main.cc
+[==========] Running 13 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 13 tests from PFDFixture
+[ RUN      ] PFDFixture.read_1
+[       OK ] PFDFixture.read_1 (32 ms)
+[ RUN      ] PFDFixture.read_2
+[       OK ] PFDFixture.read_2 (5 ms)
+[ RUN      ] PFDFixture.read_3
+[       OK ] PFDFixture.read_3 (5 ms)
+[ RUN      ] PFDFixture.read_4
+[       OK ] PFDFixture.read_4 (4 ms)
+[ RUN      ] PFDFixture.print_1
+[       OK ] PFDFixture.print_1 (16 ms)
+[ RUN      ] PFDFixture.print_2
+[       OK ] PFDFixture.print_2 (3 ms)
+[ RUN      ] PFDFixture.print_3
+[       OK ] PFDFixture.print_3 (3 ms)
+[ RUN      ] PFDFixture.print_4
+[       OK ] PFDFixture.print_4 (4 ms)
+[ RUN      ] PFDFixture.pop_1
+[       OK ] PFDFixture.pop_1 (11 ms)
+[ RUN      ] PFDFixture.pop_2
+==9923== Use of uninitialised value of size 8
+==9923==    at 0x40513E: populate_adj(std::ostream&, std::string const&, int) (in /v/filer4b/v38q001/bmk447/cs378/privaterepo/cs378-pfd/TestPFD)
+==9923==    by 0x40A285: PFDFixture_pop_2_Test::TestBody() (in /v/filer4b/v38q001/bmk447/cs378/privaterepo/cs378-pfd/TestPFD)
+==9923==    by 0x42C2FC: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/bmk447/cs378/privaterepo/cs378-pfd/TestPFD)
+==9923==    by 0x424956: testing::Test::Run() (in /v/filer4b/v38q001/bmk447/cs378/privaterepo/cs378-pfd/TestPFD)
+==9923==    by 0x424A2C: testing::TestInfo::Run() (in /v/filer4b/v38q001/bmk447/cs378/privaterepo/cs378-pfd/TestPFD)
+==9923==    by 0x424B76: testing::TestCase::Run() (in /v/filer4b/v38q001/bmk447/cs378/privaterepo/cs378-pfd/TestPFD)
+==9923==    by 0x424E06: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/bmk447/cs378/privaterepo/cs378-pfd/TestPFD)
+==9923==    by 0x42BE7C: bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /v/filer4b/v38q001/bmk447/cs378/privaterepo/cs378-pfd/TestPFD)
+==9923==    by 0x423FFA: testing::UnitTest::Run() (in /v/filer4b/v38q001/bmk447/cs378/privaterepo/cs378-pfd/TestPFD)
+==9923==    by 0x404D74: main (in /v/filer4b/v38q001/bmk447/cs378/privaterepo/cs378-pfd/TestPFD)
+==9923== 
+[       OK ] PFDFixture.pop_2 (13 ms)
+[ RUN      ] PFDFixture.solve_1
+[       OK ] PFDFixture.solve_1 (8 ms)
+[ RUN      ] PFDFixture.solve_2
+TestPFD.c++:114: Failure
+Value of: w.str()
+  Actual: "1"
+Expected: "1 5 3 2 4"
+[  FAILED  ] PFDFixture.solve_2 (54 ms)
+[ RUN      ] PFDFixture.solve_3
+TestPFD.c++:119: Failure
+Value of: w.str()
+  Actual: "1"
+Expected: "3 2 4 1"
+[  FAILED  ] PFDFixture.solve_3 (11 ms)
+[----------] 13 tests from PFDFixture (187 ms total)
+
+[----------] Global test environment tear-down
+[==========] 13 tests from 1 test case ran. (231 ms total)
+[  PASSED  ] 11 tests.
+[  FAILED  ] 2 tests, listed below:
+[  FAILED  ] PFDFixture.solve_2
+[  FAILED  ] PFDFixture.solve_3
+
+ 2 FAILED TESTS
+==9923== 
+==9923== HEAP SUMMARY:
+==9923==     in use at exit: 0 bytes in 0 blocks
+==9923==   total heap usage: 844 allocs, 844 frees, 104,316 bytes allocated
+==9923== 
+==9923== All heap blocks were freed -- no leaks are possible
+==9923== 
+==9923== For counts of detected and suppressed errors, rerun with: -v
+==9923== Use --track-origins=yes to see where uninitialised values come from
+==9923== ERROR SUMMARY: 4 errors from 1 contexts (suppressed: 2 from 2)

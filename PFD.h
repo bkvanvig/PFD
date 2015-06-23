@@ -30,16 +30,18 @@ using namespace std;
  */
 pair<int, int> PFD_read_first (const string& s);
 
+
+void populate_adj (ostream& w, const string& s, int t);
 // ------------
 // PFD_eval
 // ------------
 
 /**
- * @param i the number of tasks
- * @param j the number of rules
+ * @param w the output stream
+ * @param t the number of tasks
  * @return an 
  */
-int  PFD_eval (int i, int j);
+void PFD_eval (ostream& w, int t);
 
 // ------------
 // PFD_eval
@@ -49,6 +51,12 @@ int  PFD_eval (int i, int j);
  * @param ostream w
  */
 void print_pq(ostream& w);
+
+
+void print_adj (ostream& w, int t);
+
+
+
 // -------------
 // PFD_print
 // -------------

@@ -75,6 +75,29 @@ TEST(PFDFixture, print_4) {
     PFD_print(w, i);
     ASSERT_EQ("27 \n", w.str());}
 
+// ----
+// populate_adj
+// ----
+
+TEST(PFDFixture, pop_1) {
+    string r("3 2 1 5");
+    ostringstream w;
+    populate_adj(w, r, 5);
+    print_adj(w, 5);
+    ASSERT_EQ(w.str(), "0 0 0 0 0 \n0 0 0 0 0 \n1 0 0 0 1 \n0 0 0 0 0 \n0 0 0 0 0 \n");
+    }
+TEST(PFDFixture, pop_2) {
+    string s;
+    istringstream r("5 4\n3 2 1 5\n2 2 5 3\n4 1 3\n5 1 1");
+    ostringstream w;
+    while (getline(r,s)){
+        populate_adj(w, s, 5);
+    }
+    print_adj(w, 5);
+    ASSERT_EQ(w.str(), "0 0 0 0 0 \n0 0 1 0 1 \n1 0 0 0 1 \n0 0 1 0 0 \n1 0 0 0 0 \n");
+    }
+
+
 // -----
 // solve
 // -----
