@@ -64,6 +64,16 @@ void PFD_eval (ostream& w, int t);
  */
 int pop_pq (ostream& w, int t);
 
+// ---------
+// scan_succ
+// ---------
+/*
+ * scan rows of successors, add to pq if empty row, then delete regardless
+ * @param int t, total number of tasks
+ */
+
+void scan_succ(int t);
+
 // -------
 // update_succ
 // -------
@@ -97,7 +107,7 @@ void full_scan (int t);
  * @return 1 if >=1 dependencies
  */
 
-//int row_scan (int r, int t);
+int row_scan (int r, int t);
 
 // ------------
 // PFD_eval

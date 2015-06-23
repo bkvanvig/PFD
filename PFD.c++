@@ -87,7 +87,7 @@ void PFD_eval (ostream& w, int t) {
 void scan_succ(int t){
     int current = 0;
     while (!succ.empty()){
-        current = succ.top()
+        current = succ.top();
         int v = row_scan(current, t);
         if (v)
             pq.push(current);
