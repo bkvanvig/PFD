@@ -3,14 +3,14 @@
 // includes
 // --------
 
-#include <cassert>  // assert
-#include <functional> //greater
-#include <iostream> // endl, istream, ostream
-#include <queue>   //priority_queue
-#include <sstream>  // istringstream
-#include <string>   // getline, string
-#include <utility>  // make_pair, pair
-#include <vector>   //vector
+#include <cassert>    // assert
+#include <functional> // greater
+#include <iostream>   // endl, istream, ostream
+#include <queue>      // priority_queue
+#include <sstream>    // istringstream
+#include <string>     // getline, string
+#include <utility>    // make_pair, pair
+#include <vector>     // vector
 
 #include "PFD.h"
 
@@ -77,8 +77,21 @@ void PFD_eval (ostream& w, int t) {
             w << endl;
             return;
         }
-        assert(pq.empty);
+        assert(pq.empty());
 
+    }
+}
+// ---------
+// scan_succ
+// ---------
+void scan_succ(int t){
+    int current = 0;
+    while (!succ.empty()){
+        current = succ.top()
+        int v = row_scan(current, t);
+        if (v)
+            pq.push(current);
+        succ.pop();
     }
 }
 
@@ -102,23 +115,23 @@ void update_succ (int t, int r){
     for (int i = 0; i < t; ++i)
     {
         if (adj[i][r-1]==1){
-            succ.push_back(i+1);
+            succ.push(i+1);
             adj[i][r-1] = 0;
         }
     }
 }
 
-// // --------
-// // row_scan
-// // --------
-// int row_scan (int r, int t){
-//     for (int i = 0; i < t; ++i)
-//     {
-//         if (adj[r-1][i]==1)
-//             return 1;
-//     }
-//     return 0;
-// }
+// --------
+// row_scan
+// --------
+int row_scan (int r, int t){
+    for (int i = 0; i < t; ++i)
+    {
+        if (adj[r-1][i]==1)
+            return 1;
+    }
+    return 0;
+}
 // // --------
 // // col_scan
 // // --------
@@ -143,7 +156,7 @@ void full_scan (int t){
                 j = 0;
             }
         }
-        pq.push_back(i+1);
+        pq.push(i+1);
     }
     return;
 }
