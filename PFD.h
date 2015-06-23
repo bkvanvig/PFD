@@ -6,9 +6,14 @@
 // includes
 // --------
 
-#include <iostream> // istream, ostream
-#include <string>   // string
-#include <utility>  // pair
+#include <cassert>  // assert
+#include <functional> //greater
+#include <iostream> // endl, istream, ostream
+#include <queue>   //priority_queue
+#include <sstream>  // istringstream
+#include <string>   // getline, string
+#include <utility>  // make_pair, pair
+#include <vector>   //vector
 
 using namespace std;
 
@@ -19,11 +24,11 @@ using namespace std;
 /**
  * read two ints
  * @param s a string
- * @return a pair of ints, i & j, 
- * @return i representing the number of tasks (<=100)
- * @return j representing the number of rules (<=100)
+ * @return a pair of ints, t & r 
+ * @return t, the number of tasks (<=100)
+ * @return r, the number of rules (<=100)
  */
-void PFD_read_first (const string& s);
+pair<int, int> PFD_read_first (const string& s);
 
 // ------------
 // PFD_eval
@@ -35,15 +40,23 @@ void PFD_read_first (const string& s);
  * @return an 
  */
 int  PFD_eval (int i, int j);
-void print_pq(void);
+
+// ------------
+// PFD_eval
+// ------------
+/**
+ * prints priority_queue for testing
+ * @param ostream w
+ */
+void print_pq(ostream& w);
 // -------------
 // PFD_print
 // -------------
 
 /**
- * print three ints
+ * print an ints
  * @param w an ostream
- * @param i the beginning of the range, inclusive
+ * @param i the int
  */
 void PFD_print (ostream& w, int i);
 
@@ -56,5 +69,6 @@ void PFD_print (ostream& w, int i);
  * @param w an ostream
  */
 void PFD_solve (istream& r, ostream& w);
+
 
 #endif // PFD_h

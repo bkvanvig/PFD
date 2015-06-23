@@ -16,8 +16,21 @@
 
 using namespace std;
 
+
 vector<vector<int> > adj(100, vector <int> (0));
 priority_queue<int, vector<int>, greater<int> > pq;
+
+// ------------
+// PFD_read_first
+// ------------
+
+pair<int, int> PFD_read_first (const string& s){
+    istringstream sin(s);
+    int t;
+    int r;
+    sin >> t >> r;
+    return make_pair(t, r);
+}
 
 // ------------
 // PFD_read
@@ -26,20 +39,16 @@ priority_queue<int, vector<int>, greater<int> > pq;
 void PFD_read (const string& s) {
     istringstream sin(s);
     int i;
-    //Task Number
     int task;
-    //Number of dependencies
     int num;
     sin >> task >> num;
     while (num > 0){
-        cout << "num = " << num << endl;
         sin >> i;
-        cout << "i = " << i << endl;
         pq.push(i);
         --num;
     }
     //cout << endl;
-    print_pq();
+    //print_pq();
     return;}
 
 // ------------
@@ -54,17 +63,14 @@ int PFD_eval (int i, int j) {
 // -------------
 // print_pq
 // -------------
-void print_pq(void) {
-    cout << "pq.size() = "<< pq.size() << endl;
+void print_pq(ostream& w) {
     int p = pq.size();
     for (int i = 0; i < p; ++i)
     {
-
-        cout << pq.top() << " ";
+        w << pq.top() << " ";
         pq.pop();
-
     }
-    cout << endl;
+    w << endl;
 }
 
 // -------------
@@ -72,7 +78,7 @@ void print_pq(void) {
 // -------------
 
 void PFD_print (ostream& w, int i) {
-    w << i << " ";}
+    w << i << " " << endl;}
 
 // -------------
 // PFD_solve
@@ -80,15 +86,18 @@ void PFD_print (ostream& w, int i) {
 
 void PFD_solve (istream& r, ostream& w) {
     string s;
-    int tasks = 0;
-    int rules = 0;
-    getline(r,s);
-    istringstream sin(s);
-    sin >> tasks >> rules;
-    w << tasks << " " << rules << endl;
-    while (getline(r,s)){
-        PFD_read(s);
-    }
+    w << 1;
+    // int firstln = 0;
+    // int tasks = 0;
+    // int rules = 0;
+    // getline(r,s);
+    // const pair <int, int> p = PFD_read_first(s);
+    // tasks = p.first;
+    // rules = p.second;
+    // for (int i = 0; i < rules; ++i)
+    // {
+    //     getline(r,s);
+    // }
     return;
     
 }
