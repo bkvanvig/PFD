@@ -56,7 +56,7 @@ config:
 
 test: RunPFD.out TestPFD.out
 
-pfd-tests:
+PFD-tests:
 	git clone https://github.com/cs378-summer-2015/pfd-tests.git
 
 html: Doxyfile PFD.h PFD.c++ RunPFD.c++ TestPFD.c++
