@@ -61,7 +61,7 @@ void PFD_eval (ostream& w, int t);
  * @param ostream& w, for testing output
  * @param int t, total tasks in test
  */
-int pop_pq (ostream& w, int t);
+void pop_pq (ostream& w, int t);
 
 // ---------
 // scan_succ

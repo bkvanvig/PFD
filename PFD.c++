@@ -16,11 +16,11 @@
 
 using namespace std;
 //This array is 0 indexed while the input is 1-indexed. to access (2, 1) call adj[1][0]
-int adj[100][100]= {0};
+int adj[100][100];
 //vector<vector<int> > adj(100, vector <int> (0));
 priority_queue<int, vector<int>, greater<int> > pq;
 priority_queue<int, vector<int>, greater<int> > succ;
-int used [100] = {0};
+int used [100];
 
 // ------------
 // PFD_read_first
@@ -61,21 +61,20 @@ void populate_adj (ostream& w, const string& s, int t) {
 
 void PFD_eval (ostream& w, int t) {
     // <your code>
-    
+    //int popped = 0;
     full_scan(t);
     //Change parameter
-   // while (param > 0){
+    //while (popped < t){
         //cout << param << " param" << endl;
         //print_adj(cout, t);
-        
-        assert(succ.empty());
-        int popped = pop_pq(w, t);
-       
-        if (popped != t)
-            cout << "popped only" << popped << endl;
-        
-
+        //assert(succ.empty());
+        pop_pq(w, t);
     //}
+
+    //if (popped != t)
+            //cout << "popped only" << popped << endl;
+        //cout << "final matrix" << endl;
+        //print_adj(cout, t);
     w << endl;
 }
 // ---------
@@ -87,9 +86,10 @@ void scan_succ(int t){
         current = succ.top();
         int v = row_scan(current, t);
         //cout << "row_scan = " << v << " with row " << current << endl;
-        if (v == 0 && used[current-1] == 0){
+        if (v == 0){
             //cout << "scan_succ pushed " << current << " to pq" << endl;
             pq.push(current);
+            used[current-1] = 1;
         }  
         succ.pop();
     }
@@ -98,17 +98,14 @@ void scan_succ(int t){
 // ---------
 // pop_pq
 // ---------
-int pop_pq (ostream& w, int t){
-    int popped = 0;
+void pop_pq (ostream& w, int t){
     while (!pq.empty()){
+
         w << pq.top() << " ";
         update_succ(t, pq.top());
-        used[pq.top()-1] = 1;
         pq.pop();
         scan_succ(t);
-        ++popped;
     }
-    return popped;
 }
 // -------
 // update_succ
@@ -117,7 +114,7 @@ void update_succ (int t, int r){
     for (int i = 0; i < t; ++i)
     {
         if (adj[i][r-1]==1){
-            //cout << "pushed " << i+1 << " to succ" << endl;
+            //cout << "update_succ pushed " << i+1 << " to succ" << endl;
             succ.push(i+1);
             adj[i][r-1] = 0;
         }
@@ -152,6 +149,7 @@ int row_scan (int r, int t){
 // ----------
 void full_scan (int t){
     int write = 0;
+    //print_adj(cout, t);
     for (int i = 0; i < t; ++i)
     {
         for (int j = 0; j < t; ++j)
@@ -164,7 +162,9 @@ void full_scan (int t){
         if (write == 0){
             //cout << "full_scan pushed " << i+1 << endl; 
             pq.push(i+1);
+            used[i+1] = 1;
         }
+        write = 0;
         
     }
     return;
