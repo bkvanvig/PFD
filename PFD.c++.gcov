@@ -1,0 +1,382 @@
+        -:    0:Source:PFD.c++
+        -:    0:Graph:PFD.gcno
+        -:    0:Data:PFD.gcda
+        -:    0:Runs:2
+        -:    0:Programs:1
+        -:    1:
+        -:    2:// --------
+        -:    3:// includes
+        -:    4:// --------
+        -:    5:
+        -:    6:#include <cassert>    // assert
+        -:    7:#include <functional> // greater
+        -:    8:#include <iostream>   // endl, istream, ostream
+        -:    9:#include <queue>      // priority_queue
+        -:   10:#include <sstream>    // istringstream
+        -:   11:#include <string>     // getline, string
+        -:   12:#include <utility>    // make_pair, pair
+        -:   13:#include <vector>     // vector
+        -:   14:
+        -:   15:#include "PFD.h"
+        -:   16:
+        -:   17:using namespace std;
+        -:   18://This array is 0 indexed while the input is 1-indexed. to access (2, 1) call adj[1][0]
+        -:   19:int adj[100][100];
+        -:   20://vector<vector<int> > adj(100, vector <int> (0));
+        2:   21:priority_queue<int, vector<int>, greater<int> > pq;
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+call    5 returned 100%
+call    6 never executed
+call    7 never executed
+        2:   22:priority_queue<int, vector<int>, greater<int> > succ;
+call    0 returned 100%
+call    1 returned 100%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0% (throw)
+call    4 returned 100%
+call    5 returned 100%
+call    6 never executed
+        -:   23://int used [100];
+        -:   24:
+        -:   25:// ------------
+        -:   26:// PFD_read_first
+        -:   27:// ------------
+        -:   28:
+function _Z14PFD_read_firstRKSs called 26 returned 100% blocks executed 80%
+       26:   29:pair<int, int> PFD_read_first (const string& s){
+       26:   30:    istringstream sin(s);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        -:   31:    int t;
+        -:   32:    int r;
+       26:   33:    sin >> t >> r;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+       26:   34:    return make_pair(t, r);
+call    0 returned 100%
+call    1 returned 100%
+call    2 never executed
+        -:   35:}
+        -:   36:
+        -:   37:// ------------
+        -:   38:// populate_adj
+        -:   39:// ------------
+        -:   40:
+function _Z12populate_adjRSoRKSsi called 48 returned 100% blocks executed 83%
+       48:   41:void populate_adj (ostream& w, const string& s, int t) {
+       48:   42:    istringstream sin(s);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        -:   43:    int v;
+        -:   44:    int task;
+        -:   45:    int num;
+       48:   46:    sin >> task >> num;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+branch  4 taken 100% (fallthrough)
+branch  5 taken 0% (throw)
+        -:   47:    //cout << task << " " << num << endl;
+      116:   48:    for (int i = 0; i < num; ++i)
+branch  0 taken 59%
+branch  1 taken 41% (fallthrough)
+        -:   49:    {
+        -:   50:        /* code */
+       68:   51:        sin >> v;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       68:   52:        adj[task-1][v-1] = 1;
+        -:   53:        //cout << task << " = " << v << endl;
+       48:   54:    }
+call    0 returned 100%
+call    1 never executed
+        -:   55:    //print_adj(cout, t);
+       48:   56:}
+        -:   57:
+        -:   58:// ------------
+        -:   59:// PFD_eval
+        -:   60:// ------------
+        -:   61:
+function _Z8PFD_evalRSoi called 18 returned 100% blocks executed 100%
+       18:   62:void PFD_eval (ostream& w, int t) {
+        -:   63:    // <your code>
+        -:   64:    //int popped = 0;
+       18:   65:    full_scan(t);
+call    0 returned 100%
+        -:   66:    //Change parameter
+        -:   67:    //while (popped < t){
+        -:   68:        //cout << param << " param" << endl;
+        -:   69:        //print_adj(cout, t);
+        -:   70:        //assert(succ.empty());
+       18:   71:    pop_pq(w, t);
+call    0 returned 100%
+        -:   72:    //}
+        -:   73:
+        -:   74:    //if (popped != t)
+        -:   75:            //cout << "popped only" << popped << endl;
+        -:   76:        //cout << "final matrix" << endl;
+        -:   77:        //print_adj(cout, t);
+       18:   78:    w << endl;
+call    0 returned 100%
+       18:   79:}
+        -:   80:// ---------
+        -:   81:// scan_succ
+        -:   82:// ---------
+function _Z9scan_succi called 82 returned 100% blocks executed 100%
+       82:   83:void scan_succ(int t){
+       82:   84:    int current = 0;
+      216:   85:    while (!succ.empty()){
+call    0 returned 100%
+branch  1 taken 39%
+branch  2 taken 61% (fallthrough)
+       52:   86:        current = succ.top();
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       52:   87:        int v = row_scan(current, t);
+call    0 returned 100%
+        -:   88:        //cout << "row_scan = " << v << " with row " << current << endl;
+       52:   89:        if (v == 0){
+branch  0 taken 69% (fallthrough)
+branch  1 taken 31%
+        -:   90:            //cout << "scan_succ pushed " << current << " to pq" << endl;
+       36:   91:            pq.push(current);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        -:   92:            //used[current-1] = 1;
+        -:   93:        }  
+       52:   94:        succ.pop();
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        -:   95:    }
+       82:   96:}
+        -:   97:
+        -:   98:// ---------
+        -:   99:// pop_pq
+        -:  100:// ---------
+function _Z6pop_pqRSoi called 18 returned 100% blocks executed 100%
+       18:  101:void pop_pq (ostream& w, int t){
+      118:  102:    while (!pq.empty()){
+call    0 returned 100%
+branch  1 taken 82%
+branch  2 taken 18% (fallthrough)
+        -:  103:
+       82:  104:        w << pq.top() << " ";
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+       82:  105:        update_succ(t, pq.top());
+call    0 returned 100%
+call    1 returned 100%
+       82:  106:        pq.pop();
+call    0 returned 100%
+       82:  107:        scan_succ(t);
+call    0 returned 100%
+        -:  108:    }
+       18:  109:}
+        -:  110:// -------
+        -:  111:// update_succ
+        -:  112:// -------
+function _Z11update_succii called 82 returned 100% blocks executed 100%
+       82:  113:void update_succ (int t, int r){
+      540:  114:    for (int i = 0; i < t; ++i)
+branch  0 taken 85%
+branch  1 taken 15% (fallthrough)
+        -:  115:    {
+      458:  116:        if (adj[i][r-1]==1){
+branch  0 taken 11% (fallthrough)
+branch  1 taken 89%
+        -:  117:            //cout << "update_succ pushed " << i+1 << " to succ" << endl;
+       52:  118:            succ.push(i+1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       52:  119:            adj[i][r-1] = 0;
+        -:  120:        }
+        -:  121:    }
+        -:  122:    //scan_succ(t);
+       82:  123:}
+        -:  124:
+        -:  125:// --------
+        -:  126:// row_scan
+        -:  127:// --------
+function _Z8row_scanii called 52 returned 100% blocks executed 100%
+       52:  128:int row_scan (int r, int t){
+      346:  129:    for (int i = 0; i < t; ++i)
+branch  0 taken 90%
+branch  1 taken 10% (fallthrough)
+        -:  130:    {
+      310:  131:        if (adj[r-1][i]==1)
+branch  0 taken 5% (fallthrough)
+branch  1 taken 95%
+       16:  132:            return 1;
+        -:  133:    }
+       36:  134:    return 0;
+        -:  135:}
+        -:  136:// // --------
+        -:  137:// // col_scan
+        -:  138:// // --------
+        -:  139:// int col_scan (int c, int t){
+        -:  140://     for (int i = 0; i < t; ++i)
+        -:  141://     {
+        -:  142://         if (adj[i][c-1]==1)
+        -:  143://             return 1;
+        -:  144://     }
+        -:  145://     return 0;
+        -:  146:// }
+        -:  147:// ----------
+        -:  148:// full_scan
+        -:  149:// ----------
+function _Z9full_scani called 18 returned 100% blocks executed 100%
+       18:  150:void full_scan (int t){
+       18:  151:    int write = 0;
+        -:  152:    //print_adj(cout, t);
+      100:  153:    for (int i = 0; i < t; ++i)
+branch  0 taken 82%
+branch  1 taken 18% (fallthrough)
+        -:  154:    {
+      540:  155:        for (int j = 0; j < t; ++j)
+branch  0 taken 85%
+branch  1 taken 15% (fallthrough)
+        -:  156:        {
+      458:  157:            if (adj[i][j]==1){
+branch  0 taken 11% (fallthrough)
+branch  1 taken 89%
+       52:  158:                write = 1;
+        -:  159:            }
+        -:  160:        }
+        -:  161:        
+       82:  162:        if (write == 0){
+branch  0 taken 56% (fallthrough)
+branch  1 taken 44%
+        -:  163:            //cout << "full_scan pushed " << i+1 << endl; 
+       46:  164:            pq.push(i+1);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        -:  165:            //used[i+1] = 1;
+        -:  166:        }
+       82:  167:        write = 0;
+        -:  168:        
+        -:  169:    }
+       18:  170:    return;
+        -:  171:}
+        -:  172:
+        -:  173:
+        -:  174:// -------------
+        -:  175:// print_adj
+        -:  176:// -------------
+function _Z9print_adjRSoi called 4 returned 100% blocks executed 100%
+        4:  177:void print_adj (ostream& w, int t) {
+       24:  178:    for (int i = 0; i < t; ++i){
+branch  0 taken 83%
+branch  1 taken 17% (fallthrough)
+      120:  179:        for (int j = 0; j < t; ++j)
+branch  0 taken 83%
+branch  1 taken 17% (fallthrough)
+        -:  180:        {
+        -:  181:            /* code */
+      100:  182:            w << adj[i][j] << " ";
+call    0 returned 100%
+call    1 returned 100%
+        -:  183:        }
+       20:  184:        w << endl;
+call    0 returned 100%
+        -:  185:    }
+        -:  186:
+        4:  187:}
+        -:  188:// -------------
+        -:  189:// clear_adj
+        -:  190:// -------------
+function _Z9clear_adji called 12 returned 100% blocks executed 100%
+       12:  191:void clear_adj (int t) {
+       68:  192:    for (int i = 0; i < t; ++i){
+branch  0 taken 82%
+branch  1 taken 18% (fallthrough)
+      320:  193:        for (int j = 0; j < t; ++j)
+branch  0 taken 83%
+branch  1 taken 18% (fallthrough)
+        -:  194:        {
+        -:  195:            /* code */
+      264:  196:            adj[i][j] = 0;
+        -:  197:        }
+        -:  198:    }
+        -:  199:
+       12:  200:}
+        -:  201:// -------------
+        -:  202:// PFD_print
+        -:  203:// -------------
+        -:  204:
+function _Z9PFD_printRSoi called 8 returned 100% blocks executed 100%
+        8:  205:void PFD_print (ostream& w, int i) {
+        8:  206:    w << i << " " << endl;}
+call    0 returned 100%
+call    1 returned 100%
+call    2 returned 100%
+        -:  207:
+        -:  208:// -------------
+        -:  209:// PFD_solve
+        -:  210:// -------------
+        -:  211:
+function _Z9PFD_solveRSiRSo called 18 returned 100% blocks executed 86%
+       18:  212:void PFD_solve (istream& r, ostream& w) {
+       18:  213:    string s;
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       18:  214:    int tasks = 0;
+       18:  215:    int rules = 0;
+       18:  216:    getline(r,s);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       18:  217:    const pair <int, int> p = PFD_read_first(s);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       18:  218:    tasks = p.first;
+       18:  219:    rules = p.second;
+        -:  220:    //print_adj(w, tasks);
+       56:  221:    for (int i = 0; i < rules; ++i)
+branch  0 taken 68%
+branch  1 taken 32% (fallthrough)
+        -:  222:    {
+       38:  223:        getline(r,s);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+       38:  224:        populate_adj(w, s, tasks);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+        -:  225:    }
+       18:  226:    PFD_eval(w, tasks);
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0% (throw)
+call    3 returned 100%
+call    4 never executed
+        -:  227:    //w << 1;
+        -:  228:    //print_adj(w, tasks);
+function _GLOBAL__sub_I_adj called 2 returned 100% blocks executed 100%
+function _Z41__static_initialization_and_destruction_0ii called 2 returned 100% blocks executed 74%
+       24:  229:}
+call    0 returned 100%
+branch  1 taken 100% (fallthrough)
+branch  2 taken 0%
+branch  3 taken 100% (fallthrough)
+branch  4 taken 0%

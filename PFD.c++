@@ -20,7 +20,7 @@ int adj[100][100];
 //vector<vector<int> > adj(100, vector <int> (0));
 priority_queue<int, vector<int>, greater<int> > pq;
 priority_queue<int, vector<int>, greater<int> > succ;
-int used [100];
+//int used [100];
 
 // ------------
 // PFD_read_first
@@ -89,7 +89,7 @@ void scan_succ(int t){
         if (v == 0){
             //cout << "scan_succ pushed " << current << " to pq" << endl;
             pq.push(current);
-            used[current-1] = 1;
+            //used[current-1] = 1;
         }  
         succ.pop();
     }
@@ -162,7 +162,7 @@ void full_scan (int t){
         if (write == 0){
             //cout << "full_scan pushed " << i+1 << endl; 
             pq.push(i+1);
-            used[i+1] = 1;
+            //used[i+1] = 1;
         }
         write = 0;
         

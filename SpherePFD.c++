@@ -4,10 +4,11 @@
 // includes
 // --------
 
-#include <cassert>  // assert
+
 #include <functional> //greater
 #include <iostream> // endl, istream, ostream
 #include <queue>   //priority_queue
+#include <iostream> // cin, cout
 #include <sstream>  // istringstream
 #include <string>   // getline, string
 #include <utility>  // make_pair, pair
@@ -156,6 +157,65 @@ void PFD_solve (istream& r, ostream& w);
 
 
 
+// -------
+// defines
+// -------
+
+#ifdef ONLINE_JUDGE
+    #define NDEBUG
+#endif
+
+// --------
+// includes
+// --------
+
+
+
+
+// ----
+// main
+// ----
+
+int main () {
+    using namespace std;
+    PFD_solve(cin, cout);
+    return 0;}
+
+/*
+% g++-4.8 -pedantic -std=c++11 -Wall PFD.c++ RunPFD.c++ -o RunPFD
+
+
+
+% cat RunPFD.in
+1 10
+100 200
+201 210
+900 1000
+
+this is a test
+
+% RunPFD < RunPFD.in > RunPFD.out
+
+
+
+% cat RunPFD.out
+
+
+
+
+% doxygen -g
+// That creates the file Doxyfile.
+// Make the following edits to Doxyfile.
+// EXTRACT_ALL            = YES
+// EXTRACT_PRIVATE        = YES
+// EXTRACT_STATIC         = YES
+
+
+
+% doxygen Doxyfile
+// That creates the directory html/.
+*/
+
 
 // --------
 // includes
@@ -167,7 +227,7 @@ int adj[100][100] = {0};
 //vector<vector<int> > adj(100, vector <int> (0));
 priority_queue<int, vector<int>, greater<int> > pq;
 priority_queue<int, vector<int>, greater<int> > succ;
-int used [100] = {0};
+
 
 // ------------
 // PFD_read_first
@@ -208,22 +268,11 @@ void populate_adj (ostream& w, const string& s, int t) {
 
 void PFD_eval (ostream& w, int t) {
     // <your code>
-    //int popped = 0;
     full_scan(t);
-    //Change parameter
-    //while (popped < t){
-        //cout << param << " param" << endl;
-        //print_adj(cout, t);
-        //assert(succ.empty());
     pop_pq(w, t);
-    //}
-
-    //if (popped != t)
-            //cout << "popped only" << popped << endl;
-        //cout << "final matrix" << endl;
-        //print_adj(cout, t);
     w << endl;
 }
+
 // ---------
 // scan_succ
 // ---------
@@ -236,7 +285,6 @@ void scan_succ(int t){
         if (v == 0){
             //cout << "scan_succ pushed " << current << " to pq" << endl;
             pq.push(current);
-            used[current-1] = 1;
         }  
         succ.pop();
     }
@@ -309,7 +357,6 @@ void full_scan (int t){
         if (write == 0){
             //cout << "full_scan pushed " << i+1 << endl; 
             pq.push(i+1);
-            used[i+1] = 1;
         }
         write = 0;
         
@@ -374,62 +421,3 @@ void PFD_solve (istream& r, ostream& w) {
     //w << 1;
     //print_adj(w, tasks);
 }
-
-// -------
-// defines
-// -------
-
-#ifdef ONLINE_JUDGE
-    #define NDEBUG
-#endif
-
-// --------
-// includes
-// --------
-
-#include <iostream> // cin, cout
-
-
-// ----
-// main
-// ----
-
-int main () {
-    using namespace std;
-    PFD_solve(cin, cout);
-    return 0;}
-
-/*
-% g++-4.8 -pedantic -std=c++11 -Wall PFD.c++ RunPFD.c++ -o RunPFD
-
-
-
-% cat RunPFD.in
-1 10
-100 200
-201 210
-900 1000
-
-this is a test
-
-% RunPFD < RunPFD.in > RunPFD.out
-
-
-
-% cat RunPFD.out
-
-
-
-
-% doxygen -g
-// That creates the file Doxyfile.
-// Make the following edits to Doxyfile.
-// EXTRACT_ALL            = YES
-// EXTRACT_PRIVATE        = YES
-// EXTRACT_STATIC         = YES
-
-
-
-% doxygen Doxyfile
-// That creates the directory html/.
-*/
