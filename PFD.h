@@ -57,10 +57,9 @@ void PFD_eval (ostream& w, int t);
 // ---------
 
 /* 
- * pop all elements in the priority queue
+ * pops 1 element from the priority queue
  * @param ostream& w, for testing output
  * @param int t, total tasks in test
- * @return number of remaining tasks to be evaluated
  */
 int pop_pq (ostream& w, int t);
 
@@ -128,6 +127,11 @@ void print_pq(ostream& w);
  * @param int t, total number of tasks, for speedier traversal 
  */
 void print_adj (ostream& w, int t);
+
+// -------------
+// clear_adj
+// -------------
+void clear_adj (int t);
 
 
 

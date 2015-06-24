@@ -20,6 +20,7 @@ int adj[100][100]= {0};
 //vector<vector<int> > adj(100, vector <int> (0));
 priority_queue<int, vector<int>, greater<int> > pq;
 priority_queue<int, vector<int>, greater<int> > succ;
+int used [100] = {0};
 
 // ------------
 // PFD_read_first
@@ -39,18 +40,19 @@ pair<int, int> PFD_read_first (const string& s){
 
 void populate_adj (ostream& w, const string& s, int t) {
     istringstream sin(s);
-    int i;
+    int v;
     int task;
     int num;
     sin >> task >> num;
     //cout << task << " " << num << endl;
-    while (num > 0){
-        sin >> i;
-        adj[task-1][i-1] = 1;
-        //cout << task << " " << i << endl;
-        --num;
+    for (int i = 0; i < num; ++i)
+    {
+        /* code */
+        sin >> v;
+        adj[task-1][v-1] = 1;
+        //cout << task << " = " << v << endl;
     }
-    //print_adj(w, t);
+    //print_adj(cout, t);
 }
 
 // ------------
@@ -59,27 +61,22 @@ void populate_adj (ostream& w, const string& s, int t) {
 
 void PFD_eval (ostream& w, int t) {
     // <your code>
-    int param = t;
     
+    full_scan(t);
     //Change parameter
-    while (param > 0){
-        if (succ.empty()){
-            full_scan(t);
-        }
-        else
-            scan_succ(t);
+   // while (param > 0){
+        //cout << param << " param" << endl;
+        //print_adj(cout, t);
         
         assert(succ.empty());
-        param -= pop_pq(w, t);
-        //succ will be empty only on the last run. so if empty break?
-        //assert(!succ.empty);
-        if (succ.empty()){
-            w << endl;
-            return;
-        }
-        assert(pq.empty());
+        int popped = pop_pq(w, t);
+       
+        if (popped != t)
+            cout << "popped only" << popped << endl;
+        
 
-    }
+    //}
+    w << endl;
 }
 // ---------
 // scan_succ
@@ -89,8 +86,11 @@ void scan_succ(int t){
     while (!succ.empty()){
         current = succ.top();
         int v = row_scan(current, t);
-        if (v)
+        //cout << "row_scan = " << v << " with row " << current << endl;
+        if (v == 0 && used[current-1] == 0){
+            //cout << "scan_succ pushed " << current << " to pq" << endl;
             pq.push(current);
+        }  
         succ.pop();
     }
 }
@@ -103,7 +103,9 @@ int pop_pq (ostream& w, int t){
     while (!pq.empty()){
         w << pq.top() << " ";
         update_succ(t, pq.top());
+        used[pq.top()-1] = 1;
         pq.pop();
+        scan_succ(t);
         ++popped;
     }
     return popped;
@@ -115,10 +117,12 @@ void update_succ (int t, int r){
     for (int i = 0; i < t; ++i)
     {
         if (adj[i][r-1]==1){
+            //cout << "pushed " << i+1 << " to succ" << endl;
             succ.push(i+1);
             adj[i][r-1] = 0;
         }
     }
+    //scan_succ(t);
 }
 
 // --------
@@ -147,16 +151,21 @@ int row_scan (int r, int t){
 // full_scan
 // ----------
 void full_scan (int t){
+    int write = 0;
     for (int i = 0; i < t; ++i)
     {
         for (int j = 0; j < t; ++j)
         {
             if (adj[i][j]==1){
-                ++i;
-                j = 0;
+                write = 1;
             }
         }
-        pq.push(i+1);
+        
+        if (write == 0){
+            //cout << "full_scan pushed " << i+1 << endl; 
+            pq.push(i+1);
+        }
+        
     }
     return;
 }
@@ -185,6 +194,19 @@ void print_adj (ostream& w, int t) {
             w << adj[i][j] << " ";
         }
         w << endl;
+    }
+
+}
+// -------------
+// clear_adj
+// -------------
+void clear_adj (int t) {
+    for (int i = 0; i < t; ++i){
+        for (int j = 0; j < t; ++j)
+        {
+            /* code */
+            adj[i][j] = 0;
+        }
     }
 
 }
