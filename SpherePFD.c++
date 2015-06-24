@@ -1,6 +1,4 @@
 
-#ifndef PFD_h
-#define PFD_h
 
 // --------
 // includes
@@ -157,24 +155,13 @@ void PFD_print (ostream& w, int i);
 void PFD_solve (istream& r, ostream& w);
 
 
-#endif // PFD_h
+
 
 // --------
 // includes
 // --------
 
-#include <cassert>    // assert
-#include <functional> // greater
-#include <iostream>   // endl, istream, ostream
-#include <queue>      // priority_queue
-#include <sstream>    // istringstream
-#include <string>     // getline, string
-#include <utility>    // make_pair, pair
-#include <vector>     // vector
 
-
-
-using namespace std;
 //This array is 0 indexed while the input is 1-indexed. to access (2, 1) call adj[1][0]
 int adj[100][100] = {0};
 //vector<vector<int> > adj(100, vector <int> (0));
