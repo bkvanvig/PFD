@@ -1,0 +1,191 @@
+\hypertarget{PFD_8c_09_09}{\section{\-P\-F\-D.\-c++ \-File \-Reference}
+\label{PFD_8c_09_09}\index{\-P\-F\-D.\-c++@{\-P\-F\-D.\-c++}}
+}
+{\ttfamily \#include $<$cassert$>$}\*
+{\ttfamily \#include $<$functional$>$}\*
+{\ttfamily \#include $<$iostream$>$}\*
+{\ttfamily \#include $<$queue$>$}\*
+{\ttfamily \#include $<$sstream$>$}\*
+{\ttfamily \#include $<$string$>$}\*
+{\ttfamily \#include $<$utility$>$}\*
+{\ttfamily \#include $<$vector$>$}\*
+{\ttfamily \#include \char`\"{}\-P\-F\-D.\-h\char`\"{}}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+pair$<$ int, int $>$ \hyperlink{PFD_8c_09_09_a30112234d2e1c7cc99b0347de4634a64}{\-P\-F\-D\-\_\-read\-\_\-first} (const string \&s)
+\item 
+void \hyperlink{PFD_8c_09_09_ae9be2b415f057d69ba790e8b77ba68f8}{populate\-\_\-adj} (ostream \&w, const string \&s, int t)
+\item 
+void \hyperlink{PFD_8c_09_09_a0f3ab5d3d0c8e2daabc28ac86413aee7}{\-P\-F\-D\-\_\-eval} (ostream \&w, int t)
+\item 
+void \hyperlink{PFD_8c_09_09_a6db4aa174c52fd40ff95c15db4fe8ea2}{scan\-\_\-succ} (int t)
+\item 
+void \hyperlink{PFD_8c_09_09_a7b524878900b6cc70510ffbbf1b215b2}{pop\-\_\-pq} (ostream \&w, int t)
+\item 
+void \hyperlink{PFD_8c_09_09_acc3c76d38b2635f3198c4579ed4c7cdc}{update\-\_\-succ} (int t, int r)
+\item 
+int \hyperlink{PFD_8c_09_09_a2cf9db34cf22c4986cef82cba813bcba}{row\-\_\-scan} (int r, int t)
+\item 
+void \hyperlink{PFD_8c_09_09_a2813c5892c655065c2b4caa39f3d33fb}{full\-\_\-scan} (int t)
+\item 
+void \hyperlink{PFD_8c_09_09_a44e85580a9180b5e5fbb9efb240d784c}{print\-\_\-adj} (ostream \&w, int t)
+\item 
+void \hyperlink{PFD_8c_09_09_a3ddcbebd407225ce57f7a7c41d477e24}{clear\-\_\-adj} (int t)
+\item 
+void \hyperlink{PFD_8c_09_09_a832724a8a941400d9c4a7f1b69bcf6c8}{\-P\-F\-D\-\_\-print} (ostream \&w, int i)
+\item 
+void \hyperlink{PFD_8c_09_09_ad1fb4f8285d98373eb99cc90453aa1df}{\-P\-F\-D\-\_\-solve} (istream \&r, ostream \&w)
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{PFD_8c_09_09_a5cc29cbda633cf803a14bc73ed26a902}{adj} \mbox{[}100\mbox{]}\mbox{[}100\mbox{]}
+\item 
+priority\-\_\-queue$<$ int, vector\*
+$<$ int $>$, greater$<$ int $>$ $>$ \hyperlink{PFD_8c_09_09_ab6bdd514724b32f635e208c56bdafe8d}{pq}
+\item 
+priority\-\_\-queue$<$ int, vector\*
+$<$ int $>$, greater$<$ int $>$ $>$ \hyperlink{PFD_8c_09_09_a528bc05abddf40ec8ae9b5c245e7282a}{succ}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{PFD_8c_09_09_a3ddcbebd407225ce57f7a7c41d477e24}{\index{\-P\-F\-D.\-c++@{\-P\-F\-D.\-c++}!clear\-\_\-adj@{clear\-\_\-adj}}
+\index{clear\-\_\-adj@{clear\-\_\-adj}!PFD.c++@{\-P\-F\-D.\-c++}}
+\subsubsection[{clear\-\_\-adj}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf clear\-\_\-adj} (
+\begin{DoxyParamCaption}
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)}}\label{PFD_8c_09_09_a3ddcbebd407225ce57f7a7c41d477e24}
+\hypertarget{PFD_8c_09_09_a2813c5892c655065c2b4caa39f3d33fb}{\index{\-P\-F\-D.\-c++@{\-P\-F\-D.\-c++}!full\-\_\-scan@{full\-\_\-scan}}
+\index{full\-\_\-scan@{full\-\_\-scan}!PFD.c++@{\-P\-F\-D.\-c++}}
+\subsubsection[{full\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf full\-\_\-scan} (
+\begin{DoxyParamCaption}
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)}}\label{PFD_8c_09_09_a2813c5892c655065c2b4caa39f3d33fb}
+\hypertarget{PFD_8c_09_09_a0f3ab5d3d0c8e2daabc28ac86413aee7}{\index{\-P\-F\-D.\-c++@{\-P\-F\-D.\-c++}!\-P\-F\-D\-\_\-eval@{\-P\-F\-D\-\_\-eval}}
+\index{\-P\-F\-D\-\_\-eval@{\-P\-F\-D\-\_\-eval}!PFD.c++@{\-P\-F\-D.\-c++}}
+\subsubsection[{\-P\-F\-D\-\_\-eval}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-P\-F\-D\-\_\-eval} (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{w, }
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)}}\label{PFD_8c_09_09_a0f3ab5d3d0c8e2daabc28ac86413aee7}
+
+\begin{DoxyParams}{\-Parameters}
+{\em w} & the output stream \\
+\hline
+{\em t} & the number of tasks \\
+\hline
+\end{DoxyParams}
+\hypertarget{PFD_8c_09_09_a832724a8a941400d9c4a7f1b69bcf6c8}{\index{\-P\-F\-D.\-c++@{\-P\-F\-D.\-c++}!\-P\-F\-D\-\_\-print@{\-P\-F\-D\-\_\-print}}
+\index{\-P\-F\-D\-\_\-print@{\-P\-F\-D\-\_\-print}!PFD.c++@{\-P\-F\-D.\-c++}}
+\subsubsection[{\-P\-F\-D\-\_\-print}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-P\-F\-D\-\_\-print} (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{w, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{PFD_8c_09_09_a832724a8a941400d9c4a7f1b69bcf6c8}
+print an ints 
+\begin{DoxyParams}{\-Parameters}
+{\em w} & an ostream \\
+\hline
+{\em i} & the int \\
+\hline
+\end{DoxyParams}
+\hypertarget{PFD_8c_09_09_a30112234d2e1c7cc99b0347de4634a64}{\index{\-P\-F\-D.\-c++@{\-P\-F\-D.\-c++}!\-P\-F\-D\-\_\-read\-\_\-first@{\-P\-F\-D\-\_\-read\-\_\-first}}
+\index{\-P\-F\-D\-\_\-read\-\_\-first@{\-P\-F\-D\-\_\-read\-\_\-first}!PFD.c++@{\-P\-F\-D.\-c++}}
+\subsubsection[{\-P\-F\-D\-\_\-read\-\_\-first}]{\setlength{\rightskip}{0pt plus 5cm}pair$<$ int, int $>$ {\bf \-P\-F\-D\-\_\-read\-\_\-first} (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{s}
+\end{DoxyParamCaption}
+)}}\label{PFD_8c_09_09_a30112234d2e1c7cc99b0347de4634a64}
+read two ints 
+\begin{DoxyParams}{\-Parameters}
+{\em s} & a string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+a pair of ints, t \& r 
+
+t, the number of tasks ($<$=100) 
+
+r, the number of rules ($<$=100) 
+\end{DoxyReturn}
+\hypertarget{PFD_8c_09_09_ad1fb4f8285d98373eb99cc90453aa1df}{\index{\-P\-F\-D.\-c++@{\-P\-F\-D.\-c++}!\-P\-F\-D\-\_\-solve@{\-P\-F\-D\-\_\-solve}}
+\index{\-P\-F\-D\-\_\-solve@{\-P\-F\-D\-\_\-solve}!PFD.c++@{\-P\-F\-D.\-c++}}
+\subsubsection[{\-P\-F\-D\-\_\-solve}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-P\-F\-D\-\_\-solve} (
+\begin{DoxyParamCaption}
+\item[{istream \&}]{r, }
+\item[{ostream \&}]{w}
+\end{DoxyParamCaption}
+)}}\label{PFD_8c_09_09_ad1fb4f8285d98373eb99cc90453aa1df}
+
+\begin{DoxyParams}{\-Parameters}
+{\em r} & an istream \\
+\hline
+{\em w} & an ostream \\
+\hline
+\end{DoxyParams}
+\hypertarget{PFD_8c_09_09_a7b524878900b6cc70510ffbbf1b215b2}{\index{\-P\-F\-D.\-c++@{\-P\-F\-D.\-c++}!pop\-\_\-pq@{pop\-\_\-pq}}
+\index{pop\-\_\-pq@{pop\-\_\-pq}!PFD.c++@{\-P\-F\-D.\-c++}}
+\subsubsection[{pop\-\_\-pq}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf pop\-\_\-pq} (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{w, }
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)}}\label{PFD_8c_09_09_a7b524878900b6cc70510ffbbf1b215b2}
+\hypertarget{PFD_8c_09_09_ae9be2b415f057d69ba790e8b77ba68f8}{\index{\-P\-F\-D.\-c++@{\-P\-F\-D.\-c++}!populate\-\_\-adj@{populate\-\_\-adj}}
+\index{populate\-\_\-adj@{populate\-\_\-adj}!PFD.c++@{\-P\-F\-D.\-c++}}
+\subsubsection[{populate\-\_\-adj}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf populate\-\_\-adj} (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{w, }
+\item[{const string \&}]{s, }
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)}}\label{PFD_8c_09_09_ae9be2b415f057d69ba790e8b77ba68f8}
+\hypertarget{PFD_8c_09_09_a44e85580a9180b5e5fbb9efb240d784c}{\index{\-P\-F\-D.\-c++@{\-P\-F\-D.\-c++}!print\-\_\-adj@{print\-\_\-adj}}
+\index{print\-\_\-adj@{print\-\_\-adj}!PFD.c++@{\-P\-F\-D.\-c++}}
+\subsubsection[{print\-\_\-adj}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf print\-\_\-adj} (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{w, }
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)}}\label{PFD_8c_09_09_a44e85580a9180b5e5fbb9efb240d784c}
+\hypertarget{PFD_8c_09_09_a2cf9db34cf22c4986cef82cba813bcba}{\index{\-P\-F\-D.\-c++@{\-P\-F\-D.\-c++}!row\-\_\-scan@{row\-\_\-scan}}
+\index{row\-\_\-scan@{row\-\_\-scan}!PFD.c++@{\-P\-F\-D.\-c++}}
+\subsubsection[{row\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf row\-\_\-scan} (
+\begin{DoxyParamCaption}
+\item[{int}]{r, }
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)}}\label{PFD_8c_09_09_a2cf9db34cf22c4986cef82cba813bcba}
+\hypertarget{PFD_8c_09_09_a6db4aa174c52fd40ff95c15db4fe8ea2}{\index{\-P\-F\-D.\-c++@{\-P\-F\-D.\-c++}!scan\-\_\-succ@{scan\-\_\-succ}}
+\index{scan\-\_\-succ@{scan\-\_\-succ}!PFD.c++@{\-P\-F\-D.\-c++}}
+\subsubsection[{scan\-\_\-succ}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf scan\-\_\-succ} (
+\begin{DoxyParamCaption}
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)}}\label{PFD_8c_09_09_a6db4aa174c52fd40ff95c15db4fe8ea2}
+\hypertarget{PFD_8c_09_09_acc3c76d38b2635f3198c4579ed4c7cdc}{\index{\-P\-F\-D.\-c++@{\-P\-F\-D.\-c++}!update\-\_\-succ@{update\-\_\-succ}}
+\index{update\-\_\-succ@{update\-\_\-succ}!PFD.c++@{\-P\-F\-D.\-c++}}
+\subsubsection[{update\-\_\-succ}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf update\-\_\-succ} (
+\begin{DoxyParamCaption}
+\item[{int}]{t, }
+\item[{int}]{r}
+\end{DoxyParamCaption}
+)}}\label{PFD_8c_09_09_acc3c76d38b2635f3198c4579ed4c7cdc}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{PFD_8c_09_09_a5cc29cbda633cf803a14bc73ed26a902}{\index{\-P\-F\-D.\-c++@{\-P\-F\-D.\-c++}!adj@{adj}}
+\index{adj@{adj}!PFD.c++@{\-P\-F\-D.\-c++}}
+\subsubsection[{adj}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf adj}\mbox{[}100\mbox{]}\mbox{[}100\mbox{]}}}\label{PFD_8c_09_09_a5cc29cbda633cf803a14bc73ed26a902}
+\hypertarget{PFD_8c_09_09_ab6bdd514724b32f635e208c56bdafe8d}{\index{\-P\-F\-D.\-c++@{\-P\-F\-D.\-c++}!pq@{pq}}
+\index{pq@{pq}!PFD.c++@{\-P\-F\-D.\-c++}}
+\subsubsection[{pq}]{\setlength{\rightskip}{0pt plus 5cm}priority\-\_\-queue$<$int, vector$<$int$>$, greater$<$int$>$ $>$ {\bf pq}}}\label{PFD_8c_09_09_ab6bdd514724b32f635e208c56bdafe8d}
+\hypertarget{PFD_8c_09_09_a528bc05abddf40ec8ae9b5c245e7282a}{\index{\-P\-F\-D.\-c++@{\-P\-F\-D.\-c++}!succ@{succ}}
+\index{succ@{succ}!PFD.c++@{\-P\-F\-D.\-c++}}
+\subsubsection[{succ}]{\setlength{\rightskip}{0pt plus 5cm}priority\-\_\-queue$<$int, vector$<$int$>$, greater$<$int$>$ $>$ {\bf succ}}}\label{PFD_8c_09_09_a528bc05abddf40ec8ae9b5c245e7282a}
