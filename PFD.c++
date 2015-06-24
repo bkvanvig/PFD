@@ -68,7 +68,7 @@ void PFD_eval (ostream& w, int t) {
         //cout << param << " param" << endl;
         //print_adj(cout, t);
         //assert(succ.empty());
-        pop_pq(w, t);
+    pop_pq(w, t);
     //}
 
     //if (popped != t)
@@ -170,18 +170,6 @@ void full_scan (int t){
     return;
 }
 
-// -------------
-// print_pq
-// -------------
-void print_pq(ostream& w) {
-    int p = pq.size();
-    for (int i = 0; i < p; ++i)
-    {
-        w << pq.top() << " ";
-        pq.pop();
-    }
-    w << endl;
-}
 
 // -------------
 // print_adj
