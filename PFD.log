@@ -1,0 +1,399 @@
+commit f1df8021b256706bcd0eaacbe3bc49b2fd01b04a
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 23:25:01 2015 -0500
+
+    doxygen
+
+commit d1fb4d452f9067388c4863fd2da780139eb90ed1
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 23:13:55 2015 -0500
+
+    created acceptance files to add to public test repo, close #13, close #14, close #15
+
+commit 9c9c735f44f141afd56e62d820e7df616a218038
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 23:06:32 2015 -0500
+
+    updated acceptance files
+
+commit e79cd338e94d92c73baafb3baa512ea9ed09d975
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 22:54:40 2015 -0500
+
+    removed extra comments
+
+commit 347637b82729eef8114479c6df5e5b21a6b66601
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 22:52:43 2015 -0500
+
+    Revert "cleaned up code"
+    
+    This reverts commit 956307e142838541f3d804a61a31ac76d8874886.
+
+commit 956307e142838541f3d804a61a31ac76d8874886
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 22:49:41 2015 -0500
+
+    cleaned up code
+
+commit 7a0464cf6145d1efd08ad4d3996f3b3ac412292d
+Merge: 1436416 1cd9845
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 22:38:19 2015 -0500
+
+    Merge branch 'master' into dev
+
+commit 1cd9845228d878162c68da1a813716717ff4b053
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 22:37:59 2015 -0500
+
+    good versions
+
+commit be96974472ad445ebf6be0139138a328e5cfec36
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 22:37:08 2015 -0500
+
+    update
+
+commit 14364162b6d8c5f44971a31fee7a97da7087640d
+Merge: b80bc1e bbe721f
+Author: Brittany Kvanvig <bkvanvig@users.noreply.github.com>
+Date:   Tue Jun 23 22:35:27 2015 -0500
+
+    Merge pull request #23 from bkvanvig/master
+    
+    Merge with master
+
+commit d1c905d1737239688854b468164fa20a6cd36783
+Merge: bbe721f b80bc1e
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 22:34:32 2015 -0500
+
+    Merge branch 'dev'
+
+commit b80bc1e489b18588741bc547c00fa799e7c94929
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 22:33:59 2015 -0500
+
+    Revert "Revert "fix add""
+    
+    This reverts commit ae1b8c64b9970ca14a83414e90e1bbc926a7e9bf.
+
+commit ae1b8c64b9970ca14a83414e90e1bbc926a7e9bf
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 22:33:23 2015 -0500
+
+    Revert "fix add"
+    
+    This reverts commit 55eb83ef28653daaf1513ac7dc657a31d195b32b.
+
+commit dae7ee99527cd31f426f139f4400c412f1afaeb9
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 22:33:16 2015 -0500
+
+    Revert "new file"
+    
+    This reverts commit 58fe0c7c8f33ac1950cff43e61be95676d3eef4b.
+
+commit bbe721f662ae55be8527f0a19c1526c3b10a0410
+Merge: 58fe0c7 4a90ea9
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 22:26:51 2015 -0500
+
+    old files
+
+commit 58fe0c7c8f33ac1950cff43e61be95676d3eef4b
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 22:21:18 2015 -0500
+
+    new file
+
+commit 55eb83ef28653daaf1513ac7dc657a31d195b32b
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 22:10:57 2015 -0500
+
+    fix add
+
+commit b4b0cea63903dabf252eef2b917c11aea44cfe43
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 22:10:31 2015 -0500
+
+    update PFD
+
+commit 920169318cea338690a1c11062a171bd8005a20a
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 22:02:50 2015 -0500
+
+    updated sphere
+
+commit ab6d54f947039e18558a3841bcbed1dc4fda30bc
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 21:56:50 2015 -0500
+
+    debugging sphere solution
+
+commit f20f0001b38a35c1413cb9efe85bc48888a0b106
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 21:37:09 2015 -0500
+
+    tested code against public repo
+
+commit a0dfd41a285a5de2e4d7d81bc84efd80b25b05fc
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 20:51:04 2015 -0500
+
+    removed #include
+
+commit ba79aa7d2b825c8e4027835750cd24810ddcd18e
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 20:49:58 2015 -0500
+
+    added runPFD to sphere file
+
+commit d7dadb7bb222b9d84f173d1ee8715bd0a68bf126
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 20:47:32 2015 -0500
+
+    sphere collatz file
+
+commit 82dcb5a69743262c85945728fae53087b4b9f119
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 20:44:01 2015 -0500
+
+    fixed typo
+
+commit a3252a98e429cb94c07ea8582d7ded16509300bd
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 20:37:14 2015 -0500
+
+    fixed mess up
+
+commit 3f9556e7b938f1d9e6c7d8f94739350727946849
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 20:28:54 2015 -0500
+
+    working test cases, close #7, close #8
+
+commit 94bd11dc930ff5415720955bdca18e5df98b9801
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 20:06:02 2015 -0500
+
+    failing  corner cases, passing others
+
+commit 0dac6779250980d2f64d2f61c758b4dcc84e1beb
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Tue Jun 23 19:29:15 2015 -0500
+
+    fixed tests
+
+commit 6b95056aaccae312e410f5a91ea070d416c3cd17
+Author: Brittany Kvanvig <brittany.kvanvig@utexas.edu>
+Date:   Tue Jun 23 18:18:56 2015 -0500
+
+    debugging simple solution
+
+commit 33a2f16c5dfcaa3b100c72d7780f68c77c13472c
+Author: Brittany Kvanvig <brittany.kvanvig@utexas.edu>
+Date:   Tue Jun 23 18:14:20 2015 -0500
+
+    debugging simple solution
+
+commit 75f98e8ad00cfd0646c8f92c7d9fc6ae11f7b6c4
+Author: Brittany Kvanvig <brittany.kvanvig@utexas.edu>
+Date:   Tue Jun 23 17:47:29 2015 -0500
+
+    changed makefile for easier test visualization
+
+commit 52d0d2cfda691f56da66bba2f398a41a26c9010a
+Author: Brittany Kvanvig <brittany.kvanvig@utexas.edu>
+Date:   Tue Jun 23 17:40:55 2015 -0500
+
+    implemented simple solution, needs test
+
+commit 805dba62aba292010acea41026d18c777beb6551
+Author: Brittany Kvanvig <brittany.kvanvig@utexas.edu>
+Date:   Tue Jun 23 17:40:17 2015 -0500
+
+    implemented simple solution, needs test
+
+commit 4a90ea96047f7231b5d2cf0dc1533533df5b0612
+Author: Brittany Kvanvig <brittany.kvanvig@utexas.edu>
+Date:   Tue Jun 23 17:38:25 2015 -0500
+
+    implemented simple solution, must test
+
+commit abdc15c302d9d08cf22739c284aa0643b45ca5d6
+Merge: 4b99da0 1fb3596
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Mon Jun 22 23:58:09 2015 -0500
+
+    Merge branch 'dev' of https://github.com/bkvanvig/cs378-pfd into dev
+
+commit 4b99da0a1a2de14db8026e2177d729fff4173ec7
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Mon Jun 22 23:57:59 2015 -0500
+
+    updated time changes
+
+commit 1fb3596df6644c40dd9923a092614bbfb7058417
+Author: Brittany Kvanvig <bkvanvig@users.noreply.github.com>
+Date:   Mon Jun 22 23:56:04 2015 -0500
+
+    Delete RunPFD
+
+commit 699e08bab29fedf94e8fff4e5493ba4853f8b452
+Author: Brittany Kvanvig <bkvanvig@users.noreply.github.com>
+Date:   Mon Jun 22 23:56:00 2015 -0500
+
+    Delete TestPFD
+
+commit 854d64634531f63ce28d8b19ba2187ed67fef0df
+Author: Brittany Kvanvig <bkvanvig@users.noreply.github.com>
+Date:   Mon Jun 22 23:55:46 2015 -0500
+
+    Delete TestPfd.txt
+
+commit 96193e59925b84d9bf6ac0fe54aad2196329cf9a
+Author: Brittany Kvanvig <bkvanvig@users.noreply.github.com>
+Date:   Mon Jun 22 23:55:36 2015 -0500
+
+    Delete PFD.gcno
+
+commit 227b32fc18d45ca5a4b19ee7230cf9ee12a9aee3
+Author: Brittany Kvanvig <bkvanvig@users.noreply.github.com>
+Date:   Mon Jun 22 23:55:33 2015 -0500
+
+    Delete PFD.gcda
+
+commit aa3b278693064d9952995868263e68b3040f3720
+Author: Brittany Kvanvig <bkvanvig@users.noreply.github.com>
+Date:   Mon Jun 22 23:55:28 2015 -0500
+
+    Delete TestPFD.gcno
+
+commit e153fe27a365b803fffd6c1384daf383d3fe503b
+Author: Brittany Kvanvig <bkvanvig@users.noreply.github.com>
+Date:   Mon Jun 22 23:55:24 2015 -0500
+
+    Delete TestPFD.gcda
+
+commit 515fb21535b4454374fa8495f730c08d806fdfa2
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Mon Jun 22 23:54:41 2015 -0500
+
+    added more robust test cases
+
+commit 3a75a89beccce0a4cdb74cfe675a768a7432a826
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Mon Jun 22 22:51:20 2015 -0500
+
+    added tests, close #6
+
+commit be1f0cdd5acc11afb1d2a55e6d959cae29330df5
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Mon Jun 22 21:51:34 2015 -0500
+
+    populate dev branch
+
+commit 8eaf086ed342c34e6e5d99352e7fba4ccd7a7dfa
+Merge: 876c0cc 216519e
+Author: Brittany Kvanvig <brittany.kvanvig@utexas.edu>
+Date:   Sun Jun 21 13:33:00 2015 -0500
+
+    Merge branch 'master' of https://github.com/bkvanvig/cs378-pfd
+
+commit 876c0cc3ac81ac378e2a7bdfe50eeeca311e8c17
+Author: Brittany Kvanvig <brittany.kvanvig@utexas.edu>
+Date:   Sun Jun 21 13:32:53 2015 -0500
+
+    update
+
+commit 216519ea0490d3fa1f8eb3bbb0b0a09cf310b8d8
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Sun Jun 21 13:32:29 2015 -0500
+
+    fixed input
+
+commit 0d11e83c0ac2bcfa0d8deffce67e970e0cd1ea82
+Author: Brittany Kvanvig <brittany.kvanvig@utexas.edu>
+Date:   Sun Jun 21 13:26:57 2015 -0500
+
+    update header file
+
+commit 9de8b40dbac6b96da3b6ccd8a9c5520fef0409e1
+Author: Brittany Kvanvig <brittany.kvanvig@utexas.edu>
+Date:   Sun Jun 21 13:25:01 2015 -0500
+
+    testing read algorithm
+
+commit 2f07302f87aecba67230e99abc0cb9ef89754046
+Author: Brittany Kvanvig <brittany.kvanvig@utexas.edu>
+Date:   Sat Jun 20 21:31:42 2015 -0500
+
+    testing read code
+
+commit a8d579fb706f9a723fbe932cadcda43dc3285769
+Author: Brittany Kvanvig <brittany.kvanvig@utexas.edu>
+Date:   Sat Jun 20 21:25:19 2015 -0500
+
+    rearranged pfd_solve
+
+commit ec4c4bdbc0ae0fc8ae56c6ecb29ea149fa9d0bb2
+Author: Brittany Kvanvig <brittany.kvanvig@utexas.edu>
+Date:   Sat Jun 20 21:23:07 2015 -0500
+
+    simplified tests
+
+commit 25f53e678df642c812d4abaa81d40c5a248500dd
+Author: Brittany Kvanvig <brittany.kvanvig@utexas.edu>
+Date:   Sat Jun 20 21:21:01 2015 -0500
+
+    fixed typo
+
+commit d62062f5755d01a03078e104a2813e044ebd6c6f
+Author: Brittany Kvanvig <brittany.kvanvig@utexas.edu>
+Date:   Sat Jun 20 21:19:43 2015 -0500
+
+    fixed bugs
+
+commit 6363a6fd14d3edaa5c971e8b98fa4ae5bd4d41b8
+Author: Brittany Kvanvig <brittany.kvanvig@utexas.edu>
+Date:   Sat Jun 20 21:12:11 2015 -0500
+
+    update to general pfd form
+
+commit 2fd0aa9bd21d1dc899a1df073c175781ddefddd3
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Fri Jun 19 17:32:20 2015 -0500
+
+    removed backup file
+
+commit a9d346433b8ad531f328e84e435e284647adac29
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Fri Jun 19 17:31:48 2015 -0500
+
+    updated necessities in readme
+
+commit 4a9ebac0cc63b2da8bb77a9d22abfa8f73482db6
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Fri Jun 19 17:30:55 2015 -0500
+
+    Delete old readme
+
+commit a42826457d895aa9cc70c5ced572f4cf558b18be
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Fri Jun 19 17:30:09 2015 -0500
+
+    this file might not work
+
+commit 6920d385158fcb6d663622be5fd327f37f262f4d
+Author: Brittany Kvanvig <bkvanvig104@yahoo.com>
+Date:   Fri Jun 19 17:29:53 2015 -0500
+
+    initialized files
+
+commit faf7894d0fb35ffa8b3eba719cc82193c0d1ea8d
+Author: bkvanvig <bkvanvig104@yahoo.com>
+Date:   Fri Jun 19 16:41:53 2015 -0500
+
+    first commit, added readme
