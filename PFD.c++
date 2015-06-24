@@ -17,10 +17,10 @@
 using namespace std;
 //This array is 0 indexed while the input is 1-indexed. to access (2, 1) call adj[1][0]
 int adj[100][100];
-//priority queue of candidates
+//vector<vector<int> > adj(100, vector <int> (0));
 priority_queue<int, vector<int>, greater<int> > pq;
-//priority queue of successors
 priority_queue<int, vector<int>, greater<int> > succ;
+//int used [100];
 
 // ------------
 // PFD_read_first
@@ -44,12 +44,15 @@ void populate_adj (ostream& w, const string& s, int t) {
     int task;
     int num;
     sin >> task >> num;
+    //cout << task << " " << num << endl;
     for (int i = 0; i < num; ++i)
     {
         /* code */
         sin >> v;
         adj[task-1][v-1] = 1;
+        //cout << task << " = " << v << endl;
     }
+    //print_adj(cout, t);
 }
 
 // ------------
@@ -58,8 +61,20 @@ void populate_adj (ostream& w, const string& s, int t) {
 
 void PFD_eval (ostream& w, int t) {
     // <your code>
+    //int popped = 0;
     full_scan(t);
+    //Change parameter
+    //while (popped < t){
+        //cout << param << " param" << endl;
+        //print_adj(cout, t);
+        //assert(succ.empty());
     pop_pq(w, t);
+    //}
+
+    //if (popped != t)
+            //cout << "popped only" << popped << endl;
+        //cout << "final matrix" << endl;
+        //print_adj(cout, t);
     w << endl;
 }
 // ---------
@@ -70,8 +85,11 @@ void scan_succ(int t){
     while (!succ.empty()){
         current = succ.top();
         int v = row_scan(current, t);
+        //cout << "row_scan = " << v << " with row " << current << endl;
         if (v == 0){
+            //cout << "scan_succ pushed " << current << " to pq" << endl;
             pq.push(current);
+            //used[current-1] = 1;
         }  
         succ.pop();
     }
@@ -96,10 +114,12 @@ void update_succ (int t, int r){
     for (int i = 0; i < t; ++i)
     {
         if (adj[i][r-1]==1){
+            //cout << "update_succ pushed " << i+1 << " to succ" << endl;
             succ.push(i+1);
             adj[i][r-1] = 0;
         }
     }
+    //scan_succ(t);
 }
 
 // --------
@@ -113,12 +133,23 @@ int row_scan (int r, int t){
     }
     return 0;
 }
-
+// // --------
+// // col_scan
+// // --------
+// int col_scan (int c, int t){
+//     for (int i = 0; i < t; ++i)
+//     {
+//         if (adj[i][c-1]==1)
+//             return 1;
+//     }
+//     return 0;
+// }
 // ----------
 // full_scan
 // ----------
 void full_scan (int t){
     int write = 0;
+    //print_adj(cout, t);
     for (int i = 0; i < t; ++i)
     {
         for (int j = 0; j < t; ++j)
@@ -127,10 +158,14 @@ void full_scan (int t){
                 write = 1;
             }
         }
+        
         if (write == 0){
+            //cout << "full_scan pushed " << i+1 << endl; 
             pq.push(i+1);
+            //used[i+1] = 1;
         }
         write = 0;
+        
     }
     return;
 }
@@ -182,10 +217,13 @@ void PFD_solve (istream& r, ostream& w) {
     const pair <int, int> p = PFD_read_first(s);
     tasks = p.first;
     rules = p.second;
+    //print_adj(w, tasks);
     for (int i = 0; i < rules; ++i)
     {
         getline(r,s);
         populate_adj(w, s, tasks);
     }
     PFD_eval(w, tasks);
+    //w << 1;
+    //print_adj(w, tasks);
 }

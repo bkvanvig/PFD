@@ -89,7 +89,7 @@ TEST(PFDFixture, pop_1) {
     }
 TEST(PFDFixture, pop_2) {
     string s;
-    istringstream r("3 2 1 5\n2 2 5 3\n4 1 3\n5 1 1\n");
+    istringstream r("3 2 1 5\n2 2 5 3\n4 1 3\n5 1 1");
     ostringstream w;
     while (getline(r,s)){
         populate_adj(w, s, 5);
@@ -97,17 +97,6 @@ TEST(PFDFixture, pop_2) {
     print_adj(w, 5);
     ASSERT_EQ(w.str(), "0 0 0 0 0 \n0 0 1 0 1 \n1 0 0 0 1 \n0 0 1 0 0 \n1 0 0 0 0 \n");
     clear_adj(5);
-    }
-TEST(PFDFixture, pop_3) {
-    string s;
-    istringstream r("1 2 4 5\n2 1 4\n3 2 5 8\n4 2 6 7\n5 1 7\n");
-    ostringstream w;
-    while (getline(r,s)){
-        populate_adj(w, s, 5);
-    }
-    print_adj(w, 8);
-    ASSERT_EQ(w.str(), "0 0 0 1 1 0 0 0 \n0 0 0 1 0 0 0 0 \n0 0 0 0 1 0 0 1 \n0 0 0 0 0 1 1 0 \n0 0 0 0 0 0 1 0 \n0 0 0 0 0 0 0 0 \n0 0 0 0 0 0 0 0 \n0 0 0 0 0 0 0 0 \n");
-    clear_adj(8);
     }
 
 
