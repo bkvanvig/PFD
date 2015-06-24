@@ -176,11 +176,11 @@ void PFD_solve (istream& r, ostream& w);
 
 using namespace std;
 //This array is 0 indexed while the input is 1-indexed. to access (2, 1) call adj[1][0]
-int adj[100][100];
+int adj[100][100] = {0};
 //vector<vector<int> > adj(100, vector <int> (0));
 priority_queue<int, vector<int>, greater<int> > pq;
 priority_queue<int, vector<int>, greater<int> > succ;
-int used [100];
+int used [100] = {0};
 
 // ------------
 // PFD_read_first

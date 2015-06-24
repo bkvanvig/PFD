@@ -130,6 +130,41 @@ TEST(PFDFixture, solve_4) {
     PFD_solve(r, w);
     ASSERT_EQ("2 3 4 1 \n", w.str());
     clear_adj(4);}
+TEST(PFDFixture, solve_5) {
+    istringstream r("8 5\n1 2 4 5\n2 1 4\n3 2 5 8\n4 2 6 7\n5 1 7\n");
+    ostringstream w;
+    PFD_solve(r, w);
+    ASSERT_EQ("6 7 4 2 5 1 8 3 \n", w.str());
+}
+TEST(PFDFixture, solve_6) 
+{
+    istringstream r("5 0\n");
+    ostringstream w;
+    PFD_solve(r, w);
+    ASSERT_EQ("1 2 3 4 5 \n", w.str());
+}
+TEST(PFDFixture, solve_7) 
+{
+    istringstream r("3 1\n1 1 3\n3 1 2\n");
+    ostringstream w;
+    PFD_solve(r, w);
+    ASSERT_EQ("2 3 1 \n", w.str());
+}
+TEST(PFDFixture, solve_8) 
+{
+    istringstream r("3 0\n1 1 3\n3 1 2\n");
+    ostringstream w;
+    PFD_solve(r, w);
+    ASSERT_EQ("1 2 3 \n", w.str());
+}
+TEST(PFDFixture, solve_9) 
+{
+    istringstream r("8 5\n3 2 1 5\n2 2 5 3\n4 1 3\n5 1 1\n6 1 1");
+    ostringstream w;
+    PFD_solve(r, w);
+    ASSERT_EQ("1 5 3 2 4 6 7 8 \n", w.str());
+}
+
 
 
 
